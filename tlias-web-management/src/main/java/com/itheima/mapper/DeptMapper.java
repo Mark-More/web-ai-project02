@@ -46,4 +46,11 @@ public interface DeptMapper {
      */
     @Select("select id, name, create_time, update_time from dept where id = #{id}")
     Dept getById(Integer id);
+
+    /**
+     * 修改部门
+     * @param dept
+     */
+    @Update("update dept set name = #{name},update_time = #{updateTime} where id = #{id}")
+    void update(Dept dept);
 }
