@@ -145,6 +145,9 @@ public class Emp {
         this.exprList = exprList;
     }
 
+    // 提供无参构造函数
+    public Emp() {}
+    
     public Emp(Integer id, String username, String password, String name, Integer gender, String phone, Integer job, Integer salary, String image, LocalDate entryDate, Integer deptId, LocalDateTime createTime, LocalDateTime updateTime, String deptName, List<EmpExpr> exprList) {
         this.id = id;
         this.username = username;

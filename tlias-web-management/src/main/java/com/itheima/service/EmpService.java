@@ -6,6 +6,7 @@ import com.itheima.pojo.PageResult;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDate;
+import java.util.List;
 
 public interface EmpService {
     /**
@@ -28,4 +29,23 @@ public interface EmpService {
      * @param emp
      */
     void save(Emp emp) throws Exception;
+
+    /**
+     * 删除员工信息
+     * @param ids
+     */
+    void delete(List<Integer> ids);
+
+    /**
+     * 员工信息查询
+     * @param id
+     * @return
+     */
+    Emp getInfo(Integer id);
+
+    /**
+     * 更新员工信息
+     * @param emp
+     */
+    void update(Emp emp);
 }

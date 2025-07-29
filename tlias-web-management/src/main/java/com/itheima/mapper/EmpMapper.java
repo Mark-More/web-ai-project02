@@ -2,13 +2,11 @@ package com.itheima.mapper;
 
 import com.itheima.pojo.Emp;
 import com.itheima.pojo.EmpQueryParam;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Options;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Map;
 
 /**
  *员工信息
@@ -63,4 +61,38 @@ public interface EmpMapper {
     @Insert("insert into emp(username, password,name, gender, phone, job, salary, image, entry_date, dept_id, create_time, update_time)" +
             " values (#{username},#{password},#{name},#{gender},#{phone},#{job},#{salary},#{image},#{entryDate},#{deptId},#{createTime},#{updateTime})")
     void insert(Emp emp);
+
+    /**
+     * 批量删除员工信息
+     * @param ids
+     */
+    void deleteByIds(List<Integer> ids);
+
+    /**
+     * 根据id查询员工信息以及员工的工作经历信息
+     * @param id
+     * @return
+     */
+    Emp getById(Integer id);
+
+    /**
+     * 根据ID更新员工基本信息
+     * @param emp
+     */
+    void updateById(Emp emp);
+
+
+    /**
+     * 统计员工职位人数
+     * @return
+     */
+    @MapKey("pos")
+    List<Map<String, Object>> countEmpJobData();
+
+    /**
+     * 统计员工性别人数
+     * @return
+     */
+    @MapKey("name")
+    List<Map<String, Object>> getEmpGenderData();
 }
