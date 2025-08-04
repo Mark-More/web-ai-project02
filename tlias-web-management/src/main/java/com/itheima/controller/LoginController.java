@@ -1,4 +1,4 @@
-package com.itheima.comtroller;
+package com.itheima.controller;
 
 import com.itheima.pojo.Emp;
 import com.itheima.pojo.LoginInfo;

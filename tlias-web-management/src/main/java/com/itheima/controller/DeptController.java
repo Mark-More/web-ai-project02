@@ -1,10 +1,9 @@
-package com.itheima.comtroller;
+package com.itheima.controller;
 
+import com.itheima.anno.Log;
 import com.itheima.pojo.Dept;
 import com.itheima.pojo.Result;
 import com.itheima.service.DeptService;
-import jakarta.servlet.http.HttpServletRequest;
-import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -57,6 +56,7 @@ public class DeptController {
     /**
      * 删除部门数据 - 方式三：省略@RequestParam注解（前端传递的参数名称必须和形参名称一致）[推荐]
      */
+    @Log
     @DeleteMapping
     public Result delete(Integer id) {
 //        System.out.println("根据id删除部门数据：" + id);
@@ -68,6 +68,7 @@ public class DeptController {
     /**
      * 新增部门数据
      */
+    @Log
     @PostMapping
     public Result add(@RequestBody Dept dept) {
 //        System.out.println("新增部门数据：" + dept);
@@ -96,6 +97,7 @@ public class DeptController {
     /**
      * 修改部门数据
      */
+    @Log
     @PutMapping
     public Result update(@RequestBody Dept dept) {
 //        System.out.println("修改部门数据：" + dept);

@@ -1,4 +1,4 @@
-package com.itheima.comtroller;
+package com.itheima.controller;
 
 import com.itheima.pojo.Emp;
 import com.itheima.pojo.EmpQueryParam;
@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.Arrays;
 import java.util.List;
 
 /**

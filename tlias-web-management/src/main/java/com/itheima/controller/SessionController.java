@@ -1,4 +1,4 @@
-package com.itheima.comtroller;
+package com.itheima.controller;
 
 import com.itheima.pojo.Result;
 import jakarta.servlet.http.Cookie;
