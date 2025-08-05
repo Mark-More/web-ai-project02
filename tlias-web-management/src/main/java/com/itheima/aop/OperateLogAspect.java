@@ -3,6 +3,7 @@ package com.itheima.aop;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.itheima.mapper.OperateLogMapper;
 import com.itheima.pojo.OperateLog;
+import com.itheima.utils.CurrentHolder;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
@@ -37,7 +38,7 @@ public class OperateLogAspect {
 
         //构筑日志实体
         OperateLog olog = new OperateLog();
-        olog.setOperateEmpId(getCurrentEmpId());
+        olog.setOperateEmpId(getCurrentEmpId());//这里需要根据实际情况获取当前登录用户ID
         olog.setOperateTime(LocalDateTime.now());
         olog.setClassName(joinPoint.getTarget().getClass().getName());
         olog.setMethodName(joinPoint.getSignature().getName());
@@ -54,7 +55,7 @@ public class OperateLogAspect {
     }
 
     private Integer getCurrentEmpId() {
-        return 1;
+        return CurrentHolder.getCurrentId();
     }
 
 }
