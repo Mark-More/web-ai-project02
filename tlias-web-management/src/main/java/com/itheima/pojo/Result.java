@@ -55,7 +55,7 @@ public class Result {
 
     public static Result error(String msg){
         Result result = new Result();
-        result.code = 1;
+        result.code = 0;
         result.msg = msg;
         return result;
     }

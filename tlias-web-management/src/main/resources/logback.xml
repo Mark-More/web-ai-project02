@@ -12,7 +12,8 @@
         <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
             <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
 <!--                日志文件输出的文件名 %i表示序号-->
-                <fileNamePattern>E:/tlias-%d{yyyy-MM-dd}-%i.log</fileNamePattern>
+<!--                <fileNamePattern>/usr/local/tlias-app/tlias-%d{yyyy-MM-dd}-%i.log</fileNamePattern>-->
+                <fileNamePattern>/tlias/tlias-app/tlias-%d{yyyy-MM-dd}-%i.log</fileNamePattern>
 <!--                日志文件保留天数-->
                 <maxHistory>30</maxHistory>
 <!--                最大文件大小，超过这个大小会触发滚动到新文件，默认是10MB-->
